@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #frame {
+      max-width: 40%;
+    }
+  </style>
+  <title>Capturando imagem</title>
+</head>
+<body>
+  <input type="file" accept="image/*" capture="camera" id="camera">
+  <img id="frame">
+  <script>
+    let camera = document.getElementById('camera');
+    let frame = document.getElementById('frame');
+
+    camera.addEventListener('change', function(e) {
+    let file = e.target.files[0]; 
+        frame.src = URL.createObjectURL(file);
+    });
+  </script>
+</body>
+</html>
